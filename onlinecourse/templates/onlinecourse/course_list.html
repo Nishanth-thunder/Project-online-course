@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+    {% if course_list%}
+            {% for course in course_list %}
+    <div class="card-deck">
+    <div class="card">
+        <div class="card-body bg-light ">
+
+                <h1 class="card-title">{{ course.name }}</h1>
+                 <p class="card-text"> {{ course.description }}</p>
+                 <p class="card-text"><i>{{ course.instructor }}</i></p>
+
+                    </div>
+            </div>
+    </div>
+</div>
+            {% endfor %}
+
+    {% else %}
+        <p>No courses available!</p>
+    {% endif %}
+
+</body>
+</html>
